@@ -1,0 +1,31 @@
+# Entornos virtuales
+.venv/
+venv/
+
+# Cachés de Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+
+# Archivos locales de entorno
+.env
+*.local
+
+# Directorios de git worktree (si quedan fuera del repo)
+worktrees/
+wt/
+
+# Artefactos de empaquetado
+build/
+dist/
+*.egg-info/
+
+# Archivos de sistema/operativo
+.DS_Store
+.LOCK-wt
+
+# Configuración del agente / memoria
+engram_config.json
+graphiti_config.json

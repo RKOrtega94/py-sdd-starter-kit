@@ -1,0 +1,1 @@
+"""Unit tests package for py-sdd-starter-kit."""
