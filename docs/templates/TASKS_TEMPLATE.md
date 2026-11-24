@@ -1,5 +1,7 @@
 # TASKS_TEMPLATE.md
 
+State: draft
+
 This is the official TASKS template for feature execution. Copy this file to `docs/features/<feature>/TASKS.md` when starting a new feature.
 
 ## 1. Checklist

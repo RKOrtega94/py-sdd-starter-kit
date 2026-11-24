@@ -1,5 +1,7 @@
 # SPEC_TEMPLATE.md
 
+State: draft
+
 This is the official SPEC template for new features. Copy this file to `docs/features/<feature>/SPEC.md` when starting a new feature.
 
 ## 1. Problem Statement

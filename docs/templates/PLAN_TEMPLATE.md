@@ -1,5 +1,7 @@
 # PLAN_TEMPLATE.md
 
+State: draft
+
 This is the official PLAN template for feature planning. Copy this file to `docs/features/<feature>/PLAN.md` when starting a new feature.
 
 ## 1. Hexagonal Layer Impact
