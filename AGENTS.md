@@ -18,6 +18,7 @@ This repository is a cloneable **modern Python** starter kit built around **Hexa
 - `docs/templates/`: official templates (`SPEC_TEMPLATE.md`, `PLAN_TEMPLATE.md`, `TASKS_TEMPLATE.md`).
 - `docs/features/<feature>/`: per-feature SDD workspace containing `SPEC.md`, `PLAN.md`, and `TASKS.md` (created before starting any new feature or task).
 - `README.md`: cloning, adoption, configuration, token-saving skills, and external memory guide.
+- **Path Adaptation for Existing Projects**: In new projects the canonical structure is `src/<package>/` and `tests/`. In existing projects, adapt the real package and test directory paths to match your layout — the mandatory `docs/features/<feature>/` creation, hexagonal layer boundaries (`domain/`, `application/`, `infrastructure/`), and SDD flow remain unchanged.
 
 ## 3. Mandatory Feature Start Rule
 

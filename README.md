@@ -134,6 +134,40 @@ git worktree add ../my-service-feature feature/DESARROLLO-2
 
 ---
 
+## Adopting Into a New vs. Existing Project
+
+### Option A: Starting a New Project
+1. Clone this repository and create a Python 3.12+ virtual environment.
+2. Rename `src/_example_package` to `src/<your_package>`, update internal imports and `pyproject.toml`, and run baseline tests.
+3. Copy `.env.example` to `.env` locally (never commit `.env` or secrets).
+4. Create a `git worktree` for your first task, create `docs/features/<feature>/`, copy `SPEC_TEMPLATE.md`, `PLAN_TEMPLATE.md`, and `TASKS_TEMPLATE.md` from `docs/templates/`, and start iterating.
+
+### Option B: Adding to an Existing Project (Incremental Adoption)
+1. Copy `AGENTS.md` and `docs/` (`architecture/`, `workflows/`, `security/`, `memory/`, `decisions/`, `templates/`, and `features/`) into your existing repository without breaking current files or tests.
+2. Update package/test path references in `AGENTS.md` if your project already uses a different directory layout.
+3. Keep existing code working as-is; apply hexagonal separation (`domain/`, `application/`, `infrastructure/`) incrementally to new modules or extracted components rather than rewriting everything at once.
+4. Align environment handling with your security baseline without exposing secrets in code, docs, logs, or external memory, and configure your preferred external memory backend (`Engram`, `Graphiti`, `claudemem`, or `Obsidian`).
+5. For every new feature or refactor task, create a `git worktree` and initialize `docs/features/<feature>/` (`SPEC.md`, `PLAN.md`, `TASKS.md`) before changing production code.
+
+---
+
+## Adopting Into a New vs. Existing Project
+
+### Option A: Starting a New Project
+1. Clone this repository and create a Python 3.12+ virtual environment.
+2. Rename `src/_example_package` to `src/<your_package>`, update internal imports and `pyproject.toml`, and run baseline tests.
+3. Copy `.env.example` to `.env` locally (never commit `.env` or secrets).
+4. Create a `git worktree` for your first task, create `docs/features/<feature>/`, copy `SPEC_TEMPLATE.md`, `PLAN_TEMPLATE.md`, and `TASKS_TEMPLATE.md` from `docs/templates/`, and start iterating.
+
+### Option B: Adding to an Existing Project (Incremental Adoption)
+1. Copy `AGENTS.md` and `docs/` (`architecture/`, `workflows/`, `security/`, `memory/`, `decisions/`, `templates/`, and `features/`) into your existing repository without breaking current files or tests.
+2. Update package/test path references in `AGENTS.md` if your project already uses a different directory layout.
+3. Keep existing code working as-is; apply hexagonal separation (`domain/`, `application/`, `infrastructure/`) incrementally to new modules or extracted components rather than rewriting everything at once.
+4. Align environment handling with your security baseline without exposing secrets in code, docs, logs, or external memory, and configure your preferred external memory backend (`Engram`, `Graphiti`, `claudemem`, or `Obsidian`).
+5. For every new feature or refactor task, create a `git worktree` and initialize `docs/features/<feature>/` (`SPEC.md`, `PLAN.md`, `TASKS.md`) before changing production code.
+
+---
+
 ## Configuration & Security Notes
 
 ### Secrets & Environment
