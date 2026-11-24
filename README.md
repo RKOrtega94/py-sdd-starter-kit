@@ -81,15 +81,16 @@ pip install -r requirements.txt  # or: pip install .[dev]
 
 ```bash
 # On Windows PowerShell
-Rename-Item "src\_example_package" "src_my_service"
+Rename-Item -Path "src\_example_package" -NewName "my_service"
+# (resulting path: src/my_service)
 
 # Or using mv (Git Bash / terminal)
-mv src/_example_package src_my_service
+mv src/_example_package src/my_service
 ```
 
 **Update imports consistently:**
 
-- Edit all files under `src_my_service/` to replace `_example_package` with `my_service` (or your chosen name)
+- Edit all files under `src/my_service/` to replace `_example_package` with `my_service` (or your chosen name)
 - Update `pyproject.toml` if the package name/entry points change
 - Ensure `src/my_service/__init__.py` has proper `__all__` exports
 
@@ -162,6 +163,20 @@ git worktree add ../my-service-feature feature/DESARROLLO-2
 - **Read `AGENTS.md` first**, then load only the `docs/` guide and active `docs/features/<feature>/` files (`SPEC.md`, `PLAN.md`, `TASKS.md`) needed for the current step.
 - Use `ponytail` and `caveman` to keep context reads targeted and technical outputs concise while preserving layer rules, tests, and security checks.
 - This project applies these skills directly to reduce token usage across context reads, status updates, and technical responses.
+
+## Skills Reference (`ponytail`, `caveman`, `ECC`, `superpowers`)
+
+How to obtain/activate these skills in your agent environment:
+
+- **`ponytail`**: Lazy senior developer mode. Activated by default in this harness. Use `/ponytail` or prefix with `ponytail:` for concise, no-fluff technical responses. Levels: `lite`/`full`/`ultra`. Reduces token consumption by compressing outputs while preserving technical accuracy.
+
+- **`caveman`**: Ultra-compressed communication mode. Activated with `/caveman` or `full`/`ultra` mode. Drops articles, filler, pleasantries, hedging. One-line comments: `location, problem, fix`. Reduces token usage ~75% while keeping full technical substance. Compress memory files with `/caveman-compress FILEPATH`.
+
+- **`ECC`** (Everything Claude Code / harness engineering): The operating framework for this repository. Enforced through AGENTS.md, SDD flow (SPEC.md → PLAN.md → TASKS.md), ECC loop (plan → verify → implement → review → record), and mandatory session summaries via `mem_session_summary`. Read `AGENTS.md` §5 for the full flow.
+
+- **`superpowers`** (subagents & git worktree isolation): Use a dedicated `git worktree` per feature/branch (`git worktree add ../<feature> <branch-name>`) to keep active iterations isolated from `main`. Delegate bounded, parallelizable subtasks to subagents using the `subagent` tool (e.g., test authoring, adapter wiring, security review). Each subagent runs with fresh context but integrates results cleanly into the main workspace.
+
+**When cloning this repo**: Ensure your agent harness has these skills enabled. The `AGENTS.md` file serves as the operating framework — read it first before starting any feature. The `docs/workflows/sdd-ecc.md` guide covers the SDD + ECC + Superpowers workflow in detail.
 
 ---
 
