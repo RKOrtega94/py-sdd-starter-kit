@@ -12,6 +12,7 @@ __pycache__/
 # Archivos locales de entorno
 .env
 *.local
+.claude/settings.local.json
 
 # Directorios de git worktree (si quedan fuera del repo)
 worktrees/

@@ -20,6 +20,10 @@ Every time the agent begins iterating or starts a new feature/task, it must firs
   - Use a dedicated `git worktree` per feature/branch so active iterations stay isolated from `main` and other features.
   - Delegate bounded, parallelizable subtasks to subagents (for example, test authoring, adapter wiring, or security/boundary review) and integrate results cleanly.
 
+## 2.1 Multi-Agent Model Split (default)
+
+Opus orchestrates, Sonnet implements, Haiku explores (`.claude/agents/`). Parametrizable: see `docs/workflows/multi-agent.md`.
+
 ## 3. Token-Efficiency Skills (`ponytail`, `caveman`)
 
 Applied directly to this project to reduce token usage:

@@ -34,6 +34,16 @@ This is the official PLAN template for feature planning. Copy this file to `docs
 - Git worktree directory: `...`
 - Subagent delegation plan (if applicable)
 
+## 4.1 Agent & Model Assignment
+
+Default profile (see `docs/workflows/multi-agent.md`): OPUS thinks, SONNET writes, HAIKU reads. Change only if this feature needs a deviation.
+
+| Role | Agent | Model | Override reason |
+|------|-------|-------|-----------------|
+| Think / decide | `sdd-orchestrator` | opus | default |
+| Write / implement | `sdd-implementer` | sonnet | default |
+| Read / explore | `sdd-explorer` | haiku | default |
+
 ## 5. Verification Strategy
 
 - Unit test coverage targets
